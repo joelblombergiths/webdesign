@@ -56,8 +56,8 @@ document.addEventListener('DOMContentLoaded', () =>
 
     const grid = document.querySelector('.grid')
     const resultDisplay = document.querySelector('#result')
-    var cardsChosen = []
-    var cardChosenId =[]
+    var chosenCardNames = []
+    var chosenCardIds =[]
     var cardsWon = []
     var countTries = 0
 
@@ -75,9 +75,9 @@ document.addEventListener('DOMContentLoaded', () =>
     function checkForMatch() 
     {
         var cards = document.querySelectorAll('img')
-        var optionOneId = cardChosenId[0]
-        var optionTwoId = cardChosenId[1]
-        if(cardsChosen[0] === cardsChosen[1])
+        var optionOneId = chosenCardIds[0]
+        var optionTwoId = chosenCardIds[1]
+        if(chosenCardNames[0] === chosenCardNames[1])
         {
             cards[optionOneId].setAttribute('src', 'images/empty.png')
             cards[optionTwoId].setAttribute('src', 'images/empty.png')
@@ -90,8 +90,8 @@ document.addEventListener('DOMContentLoaded', () =>
             cards[optionTwoId].setAttribute('src', 'images/back.png')
         }
 
-        cardChosenId = []
-        cardsChosen = []
+        chosenCardIds = []
+        chosenCardNames = []
 
         countTries += 1
         resultDisplay.textContent = countTries
@@ -124,11 +124,11 @@ document.addEventListener('DOMContentLoaded', () =>
         }
         else 
         {
-            cardsChosen.push(cardArray[cardId].name)
-            cardChosenId.push(cardId)
+            chosenCardNames.push(cardArray[cardId].name)
+            chosenCardIds.push(cardId)
             this.setAttribute('src', cardArray[cardId].img)
 
-            if (cardChosenId.length === 2) {
+            if (chosenCardIds.length === 2) {
                 setTimeout(checkForMatch, 500)
             }
         }
