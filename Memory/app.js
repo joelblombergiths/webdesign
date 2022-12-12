@@ -1,22 +1,3 @@
-const alreadyFound = function(list, obj)
-{
-    if(list.length > 0)
-    {        
-        for(let i = 0; i < list.length; i++)
-        {
-            var whiteCards = list[i]
-            for (let j = 0; j < whiteCards.length; j++) 
-            {
-                if (parseInt(whiteCards[j]) == obj) {
-                    console.log('contains:' + obj)
-                    return true;
-                }
-            }
-        }        
-    }
-    return false;
-}
-
 document.addEventListener('DOMContentLoaded', () =>
 {
     const cardArray = [
@@ -80,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () =>
     var countTries = 0
 
     function createBoard() {
-        for (let i = 0; i < cardArray.length; i++) {
+        for (var i = 0; i < cardArray.length; i++) {
             var card = document.createElement('img')
             card.setAttribute('src', 'images/blank.png')
             card.setAttribute('data-id', i)
@@ -91,13 +72,14 @@ document.addEventListener('DOMContentLoaded', () =>
 
     function checkForMatch() {
         var cards = document.querySelectorAll('img')
-        const optionOneId = cardChosenId[0]
-        const optionTwoId = cardChosenId[1]
+        var optionOneId = cardChosenId[0]
+        var optionTwoId = cardChosenId[1]
         if(cardsChosen[0] === cardsChosen[1])
         {
             cards[optionOneId].setAttribute('src', 'images/white.png')
             cards[optionTwoId].setAttribute('src', 'images/white.png')
-            cardsWon.push(cardChosenId)
+            cardsWon.push(optionOneId)
+            cardsWon.push(optionTwoId)
         }
         else 
         {
@@ -111,16 +93,27 @@ document.addEventListener('DOMContentLoaded', () =>
         countTries += 1
         resultDisplay.textContent = countTries
 
-        if(cardsWon.length === cardArray.length/2)
+        if(cardsWon.length === cardArray.length)
         {
             resultDisplay.textContent = 'Yay, you found them all in ' + countTries + ' tries'
         }
     }
 
-    function flipCard() {
-        var cardId = this.getAttribute('data-id')
-        console.log(cardsWon)
-        console.log(cardId)
+    function alreadyFound(list, obj)
+    {
+        for(var i = 0; i < list.length; i++)
+        {
+            if (list[i] == obj) {
+                console.log('contains:' + obj)
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function flipCard()
+    {
+        var cardId = parseInt(this.getAttribute('data-id'))
         if(alreadyFound(cardsWon, cardId))
         {
             alert('card already found')
@@ -130,6 +123,7 @@ document.addEventListener('DOMContentLoaded', () =>
             cardsChosen.push(cardArray[cardId].name)
             cardChosenId.push(cardId)
             this.setAttribute('src', cardArray[cardId].img)
+
             if (cardChosenId.length === 2) {
                 setTimeout(checkForMatch, 500)
             }
