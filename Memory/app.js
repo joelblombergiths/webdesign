@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () =>
 {
-    const cardArray = [
+    const cardArray = 
+    [
         {
             name: 'fries',
             img: 'images/fries.png'
@@ -60,31 +61,33 @@ document.addEventListener('DOMContentLoaded', () =>
     var cardsWon = []
     var countTries = 0
 
-    function createBoard() {
+    function createBoard() 
+    {
         for (var i = 0; i < cardArray.length; i++) {
             var card = document.createElement('img')
-            card.setAttribute('src', 'images/blank.png')
+            card.setAttribute('src', 'images/back.png')
             card.setAttribute('data-id', i)
             card.addEventListener('click', flipCard)
             grid.appendChild(card)
         }
     }
 
-    function checkForMatch() {
+    function checkForMatch() 
+    {
         var cards = document.querySelectorAll('img')
         var optionOneId = cardChosenId[0]
         var optionTwoId = cardChosenId[1]
         if(cardsChosen[0] === cardsChosen[1])
         {
-            cards[optionOneId].setAttribute('src', 'images/white.png')
-            cards[optionTwoId].setAttribute('src', 'images/white.png')
+            cards[optionOneId].setAttribute('src', 'images/empty.png')
+            cards[optionTwoId].setAttribute('src', 'images/empty.png')
             cardsWon.push(optionOneId)
             cardsWon.push(optionTwoId)
         }
         else 
         {
-            cards[optionOneId].setAttribute('src', 'images/blank.png')
-            cards[optionTwoId].setAttribute('src', 'images/blank.png')
+            cards[optionOneId].setAttribute('src', 'images/back.png')
+            cards[optionTwoId].setAttribute('src', 'images/back.png')
         }
 
         cardChosenId = []
@@ -103,7 +106,8 @@ document.addEventListener('DOMContentLoaded', () =>
     {
         for(var i = 0; i < list.length; i++)
         {
-            if (list[i] == obj) {
+            if (list[i] == obj) 
+            {
                 console.log('contains:' + obj)
                 return true;
             }
