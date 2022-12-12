@@ -56,9 +56,8 @@ document.addEventListener('DOMContentLoaded', () =>
 
     const grid = document.querySelector('.grid')
     const resultDisplay = document.querySelector('#result')
-    var chosenCardNames = []
-    var chosenCardIds =[]
-    var cardsWon = []
+    var chosenCardIds = []
+    var cardsFound = []
     var countTries = 0
 
     function createBoard() 
@@ -75,30 +74,33 @@ document.addEventListener('DOMContentLoaded', () =>
     function checkForMatch() 
     {
         var cards = document.querySelectorAll('img')
-        var optionOneId = chosenCardIds[0]
-        var optionTwoId = chosenCardIds[1]
-        if(chosenCardNames[0] === chosenCardNames[1])
+        var firstCard = chosenCardIds[0]
+        var secondCard = chosenCardIds[1]
+
+        if(cardArray[firstCard].name === cardArray[secondCard].name)
         {
-            cards[optionOneId].setAttribute('src', 'images/empty.png')
-            cards[optionTwoId].setAttribute('src', 'images/empty.png')
-            cardsWon.push(optionOneId)
-            cardsWon.push(optionTwoId)
+            cards[firstCard].setAttribute('src', 'images/empty.png')
+            cards[secondCard].setAttribute('src', 'images/empty.png')
+            cardsFound.push(firstCard)
+            cardsFound.push(secondCard)
         }
         else 
         {
-            cards[optionOneId].setAttribute('src', 'images/back.png')
-            cards[optionTwoId].setAttribute('src', 'images/back.png')
+            cards[firstCard].setAttribute('src', 'images/back.png')
+            cards[secondCard].setAttribute('src', 'images/back.png')
         }
 
         chosenCardIds = []
-        chosenCardNames = []
 
-        countTries += 1
-        resultDisplay.textContent = countTries
+        countTries += 1       
 
-        if(cardsWon.length === cardArray.length)
+        if(cardsFound.length === cardArray.length)
         {
             resultDisplay.textContent = 'Yay, you found them all in ' + countTries + ' tries'
+        }
+        else
+        {
+            resultDisplay.textContent = 'Tries: ' + countTries
         }
     }
 
@@ -118,13 +120,12 @@ document.addEventListener('DOMContentLoaded', () =>
     function flipCard()
     {
         var cardId = parseInt(this.getAttribute('data-id'))
-        if(alreadyFound(cardsWon, cardId))
+        if(alreadyFound(cardsFound, cardId))
         {
             alert('card already found')
         }
         else 
         {
-            chosenCardNames.push(cardArray[cardId].name)
             chosenCardIds.push(cardId)
             this.setAttribute('src', cardArray[cardId].img)
 
