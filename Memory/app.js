@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () =>
     function flipCard()
     {
         var cardId = parseInt(this.getAttribute('data-id'))
-        if(!cardsFound.some(card => card == cardId))
+        if(!cardsFound.includes(cardId))
         {
             chosenCards.push(cardId)
             this.setAttribute('src', cardArray[cardId].img)
