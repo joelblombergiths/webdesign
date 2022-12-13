@@ -88,9 +88,7 @@ document.addEventListener('DOMContentLoaded', () =>
         {
             cards[firstCard].setAttribute('src', 'images/back.png')
             cards[secondCard].setAttribute('src', 'images/back.png')
-        }
-
-        chosenCardIds = []
+        }       
 
         countTries += 1       
 
@@ -102,6 +100,8 @@ document.addEventListener('DOMContentLoaded', () =>
         {
             resultDisplay.textContent = 'Tries: ' + countTries
         }
+
+        chosenCardIds = []
     }
 
     function alreadyFound(list, obj)
@@ -110,7 +110,6 @@ document.addEventListener('DOMContentLoaded', () =>
         {
             if (list[i] == obj) 
             {
-                console.log('contains:' + obj)
                 return true;
             }
         }
@@ -120,11 +119,7 @@ document.addEventListener('DOMContentLoaded', () =>
     function flipCard()
     {
         var cardId = parseInt(this.getAttribute('data-id'))
-        if(alreadyFound(cardsFound, cardId))
-        {
-            alert('card already found')
-        }
-        else 
+        if(!alreadyFound(cardsFound, cardId))        
         {
             chosenCardIds.push(cardId)
             this.setAttribute('src', cardArray[cardId].img)
@@ -137,4 +132,3 @@ document.addEventListener('DOMContentLoaded', () =>
 
     createBoard()
 })
-
