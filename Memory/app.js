@@ -56,11 +56,11 @@ document.addEventListener('DOMContentLoaded', () =>
 
     const grid = document.querySelector('.grid')
     const resultDisplay = document.querySelector('#result')
-    var chosenCardIds = []
+    var chosenCards = []
     var cardsFound = []
     var countTries = 0
 
-    function createBoard() 
+    function initBoard() 
     {
         for (var i = 0; i < cardArray.length; i++) {
             var card = document.createElement('img')
@@ -74,8 +74,8 @@ document.addEventListener('DOMContentLoaded', () =>
     function checkForMatch() 
     {
         var cards = document.querySelectorAll('img')
-        var firstCard = chosenCardIds[0]
-        var secondCard = chosenCardIds[1]
+        var firstCard = chosenCards[0]
+        var secondCard = chosenCards[1]
 
         if(cardArray[firstCard].name === cardArray[secondCard].name)
         {
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () =>
             resultDisplay.textContent = 'Tries: ' + countTries
         }
 
-        chosenCardIds = []
+        chosenCards = []
     }
 
     function alreadyFound(list, obj)
@@ -121,14 +121,14 @@ document.addEventListener('DOMContentLoaded', () =>
         var cardId = parseInt(this.getAttribute('data-id'))
         if(!alreadyFound(cardsFound, cardId))        
         {
-            chosenCardIds.push(cardId)
+            chosenCards.push(cardId)
             this.setAttribute('src', cardArray[cardId].img)
 
-            if (chosenCardIds.length === 2) {
+            if (chosenCards.length === 2) {
                 setTimeout(checkForMatch, 500)
             }
         }
     }
 
-    createBoard()
+    initBoard()
 })
