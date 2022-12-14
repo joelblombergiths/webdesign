@@ -4,10 +4,14 @@ const timeLeftDisplay = document.querySelector('#timeLeft')
 const scoreDisplay = document.querySelector('#score')
 
 let result = 0;
+scoreDisplay.textContent = 'Score: ' + result
+
 let currentTime = 5
 timeLeftDisplay.textContent = currentTime
 
 let moleSquare
+let prevMoleSquare = -1
+
 let moleTimerId
 let countDownTimerId
 
@@ -27,10 +31,15 @@ function moveMole()
     grid.forEach(square => {
         square.classList.remove('mole')        
     })
-
-    let randomSquare = grid[Math.floor(Math.random() * grid.length)]
-    randomSquare.classList.add('mole')
-    moleSquare = randomSquare.id
+    
+    moleSquare = Math.floor(Math.random() * grid.length)
+    if(moleSquare == prevMoleSquare)
+    {
+        moleSquare = Math.floor(Math.random() * grid.length)
+    }
+    
+    grid[moleSquare].classList.add('mole')
+    prevMoleSquare = moleSquare
 }
 
 function countDown()
@@ -38,11 +47,12 @@ function countDown()
     currentTime--
     timeLeftDisplay.textContent = currentTime
     
-    if(currentTime == 0)
+    if(currentTime == -1)
     {
         clearInterval(countDownTimerId)        
         clearInterval(moleTimerId)
         moleSquare = null
+        timeLeftDisplay.textContent = 'Time Out!'
         scoreDisplay.textContent = "Game Over! Final score is " + result
     }
 }
