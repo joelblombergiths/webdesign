@@ -1,14 +1,18 @@
 const grid = document.querySelector('.grid')
-const blockWidth = 100
-const blockHeight = 20
 const boardWidth = 560
 const boardHeight = 300
-const ballDiameter = 20
+
+const blocks = []
+const blockRows = 3
+const blockCols = 5
+const blockWidth = 100
+const blockHeight = 20
 
 const playerStart = [230, 10]
 let playerPosition = playerStart
 let player
 
+const ballDiameter = 20
 const ballStart = [270, 40]
 let ballPosition = ballStart
 let xDirection = 2
@@ -20,7 +24,7 @@ const scoreDisplay = document.querySelector('#score')
 let score = 0
 scoreDisplay.textContent = 'Score: ' + score
 
-class block
+class Block
 {
     constructor(xAxis, yAxis)
     {
@@ -31,33 +35,25 @@ class block
     }
 }
 
-const blocks = [
-    new block(10, 270),
-    new block(120, 270),
-    new block(230, 270),
-    new block(340, 270),
-    new block(450, 270),
-    new block(10, 240),
-    new block(120, 240),
-    new block(230, 240),
-    new block(340, 240),
-    new block(450, 240),
-    new block(10, 210),
-    new block(120, 210),
-    new block(230, 210),
-    new block(340, 210),
-    new block(450, 210)
-]
-
 function initBlocks()
 {
-    for(let i = 0; i < blocks.length; i++)
-    {
-        const block = document.createElement('div')
-        block.classList.add('block')
-        block.style.left = blocks[i].bottomLeft[0] + 'px'
-        block.style.bottom = blocks[i].bottomLeft[1] + 'px'
-        grid.appendChild(block)
+    let left
+    let bottom = boardHeight - (blockHeight + 10)
+
+    for(let i = 0; i < blockRows; i++)
+    {        
+        for(let j = 0; j < blockCols; j++)
+        {
+            left = (j * (blockWidth + 10)) + 10
+
+            const block = document.createElement('div')
+            block.classList.add('block')
+            block.style.left = left + 'px'
+            block.style.bottom = bottom + 'px'    
+            grid.appendChild(block)
+            blocks.push(new Block(left, bottom))
+        }
+        bottom -= blockHeight + 10
     }
 }
 
@@ -113,15 +109,16 @@ function drawBall()
 
 function moveBall()
 {
-    checkForCollisions()
+    checkCollisions()
 
     ballPosition[0] += xDirection
     ballPosition[1] += yDirection
     drawBall()
 }
 
-function checkForCollisions()
+function checkCollisions()
 {
+    //blocks
     for (let i = 0; i < blocks.length; i++) {
         if(
             (ballPosition[0] > blocks[i].bottomLeft[0] && ballPosition[0] < blocks[i].bottomRight[0]) &&
@@ -144,6 +141,7 @@ function checkForCollisions()
         }
     }
 
+    //player
     if(
         (ballPosition[0] > playerPosition[0] && ballPosition[0] < playerPosition[0] + blockWidth) && 
         (ballPosition[1] > playerPosition[1] && ballPosition[1] < playerPosition[1] + blockHeight )
@@ -190,7 +188,7 @@ function newGame()
     initBlocks()
     initPlayer()
     initBall()
-    ballTimerId = setInterval(moveBall, 20)
+    ballTimerId = setInterval(moveBall, 30)
 }
 
 newGame()

@@ -4,14 +4,16 @@
     width: 560px;
     height: 300px;
     border: solid black 1px;
+    justify-items: space-evenly;
+    justify-content: space-evenly;
 }
 
 .block
 {
     position: absolute;
+    background-color: blue;
     width: 100px;
     height: 20px;
-    background-color: blue;
 }
 
 .player
