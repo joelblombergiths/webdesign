@@ -27,8 +27,9 @@ scoreDisplay.textContent = 'Score: ' + score
 
 class Block
 {
-    constructor(x, y)
+    constructor(element, x, y)
     {
+        this.element = element
         this.bottomLeft = [x, y]
         this.bottomRight = [x + blockWidth, y]
         this.topLeft = [x, y + blockHeight]
@@ -53,7 +54,7 @@ function initBlocks()
             block.style.bottom = bottom + 'px'    
             block.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)]
             grid.appendChild(block)
-            blocks.push(new Block(left, bottom))
+            blocks.push(new Block(block, left, bottom))
         }
         bottom -= blockHeight + 10
     }
@@ -127,8 +128,7 @@ function checkCollisions()
             (ballPosition[1] + ballDiameter > blocks[i].bottomLeft[1] && ballPosition[1] < blocks[i].topLeft[1])
         )
         {
-            const allBlocks = Array.from(document.querySelectorAll('.block'))
-            allBlocks[i].classList.remove('block')
+            blocks[i].element.classList.remove('block')
             blocks.splice(i, 1)
             yDirection = -yDirection    
 
