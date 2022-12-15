@@ -2,6 +2,7 @@ const grid = document.querySelector('.grid')
 const boardWidth = 560
 const boardHeight = 300
 
+const colors = ['blue', 'green', 'yellow', 'magenta', 'cyan']
 const blocks = []
 const blockRows = 3
 const blockCols = 5
@@ -26,12 +27,12 @@ scoreDisplay.textContent = 'Score: ' + score
 
 class Block
 {
-    constructor(xAxis, yAxis)
+    constructor(x, y)
     {
-        this.bottomLeft = [xAxis, yAxis]
-        this.bottomRight = [xAxis + blockWidth, yAxis]
-        this.topLeft = [xAxis, yAxis + blockHeight]
-        this.topRight = [xAxis + blockWidth, yAxis + blockHeight]
+        this.bottomLeft = [x, y]
+        this.bottomRight = [x + blockWidth, y]
+        this.topLeft = [x, y + blockHeight]
+        this.topRight = [x + blockWidth, y + blockHeight]
     }
 }
 
@@ -50,6 +51,7 @@ function initBlocks()
             block.classList.add('block')
             block.style.left = left + 'px'
             block.style.bottom = bottom + 'px'    
+            block.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)]
             grid.appendChild(block)
             blocks.push(new Block(left, bottom))
         }
@@ -125,8 +127,8 @@ function checkCollisions()
             (ballPosition[1] + ballDiameter > blocks[i].bottomLeft[1] && ballPosition[1] < blocks[i].topLeft[1])
         )
         {
-            const allBLocks = Array.from(document.querySelectorAll('.block'))
-            allBLocks[i].classList.remove('block')
+            const allBlocks = Array.from(document.querySelectorAll('.block'))
+            allBlocks[i].classList.remove('block')
             blocks.splice(i, 1)
             yDirection = -yDirection    
 
