@@ -6,7 +6,7 @@ const scoreDisplay = document.querySelector('#score')
 let result = 0;
 scoreDisplay.textContent = 'Score: ' + result
 
-let currentTime = 5
+let currentTime = 60
 timeLeftDisplay.textContent = currentTime
 
 let moleSquare
@@ -59,7 +59,7 @@ function countDown()
 
 function startGame()
 {    
-    moleTimerId = setInterval(moveMole, 500)
+    moleTimerId = setInterval(moveMole, 750)
     countDownTimerId = setInterval(countDown, 1000)
 }
 
