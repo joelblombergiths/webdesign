@@ -1,0 +1,41 @@
+body
+{
+    background-color: hotpink;
+    color: aqua;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+hr
+{
+    width: 10%;
+    border-style: dotted none none;
+    border-width: 15px;
+    border-color: lime;
+}
+
+h1
+{
+    color: chocolate;
+}
+
+h2
+{
+    color: blueviolet;
+}
+
+.subtitles
+{
+    color: darkcyan;
+    font-family: fantasy;
+}
+
+.maintitle
+{
+    font-family: cursive;
+    font-style: italic;
+}
+
+#p1
+{
+    font-style: italic
+}
