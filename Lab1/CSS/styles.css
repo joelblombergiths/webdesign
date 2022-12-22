@@ -1,0 +1,185 @@
+body
+{
+    background-image: linear-gradient(#CFF5E7, #A0E4CB);    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+}
+
+/* Nån gång kommer detta bli socialt acceptabelt
+body
+{
+    background-color: hotpink;
+    color: lime;
+    font-family: fantasy;
+} */
+
+h2
+{
+    color: #59C1BD;
+    font-family: 'Kanit', sans-serif;
+}
+
+main
+{
+    padding-top: 50px;
+}
+
+fieldset
+{
+    color: grey;    
+    border: dashed grey 1px;
+}
+
+hr
+{
+    margin: 100px 0px;
+}
+
+table
+{
+    margin: auto;
+    border: solid white 2px;
+    border-collapse: collapse;
+}
+
+th
+{
+    border: solid white 2px;
+    font-family: 'Kanit', sans-serif;
+}
+
+tr, td
+{
+    border: dotted white 1px;
+    padding: 5px;
+}
+
+ol
+{
+    list-style-type: upper-roman;
+    display: table;
+    margin: auto;
+    list-style-position: inside;
+    font-size: large;
+    font-family: 'Kanit', sans-serif;
+}
+
+li
+{
+    text-align: left;
+}
+
+img
+{
+    padding: 50px;
+}
+
+hr
+{
+    border-style: dashed;
+    border-width: 1px 0px 0px ;
+}
+
+p
+{
+    font-family: monospace;
+    color: #0D4C92;
+}
+
+p.quote
+{
+    color: grey;
+}
+
+.header
+{
+    font-family: 'Dancing Script', cursive;
+    font-size: 72px;
+    color: #0D4C92;
+    margin-top: 50px;
+}
+
+.square
+{
+    height: 200px;
+    width: 200px;
+    border: solid black 1px;
+}
+
+.mole
+{
+    background-image: url('../WackAMole/images/mole.png');
+    background-size: cover;
+}
+
+.bottom
+{
+    position: relative;
+    margin-top: 300px;
+    font-family: cursive;
+    font-size: x-small;
+}
+
+#memoryGrid 
+{
+    display: flex;
+    flex-wrap: wrap;
+    height: 305px;
+    width: 410px;
+    justify-content: space-between;
+    align-content: space-between;
+    margin: auto;
+}
+
+#moleGrid
+{    
+    display: flex;
+    flex-wrap: wrap;
+    width: 606px;
+    height: 606px;
+    margin: auto;
+}
+
+#menu
+{
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    background-color: black;
+    list-style-type: none;
+}
+
+#menu li
+{
+    float: left;
+}
+
+#menu a
+{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 6px;
+    text-decoration: none;
+}
+#menu a:hover
+{
+    background-color: #0d4b9286;
+}
+
+#menu a.selected
+{
+    background-color: #0D4C92;
+}
+
+#boardGamesToggle
+{
+    display: none;    
+    font-family: monospace;
+    border: solid yellow 3px;
+}

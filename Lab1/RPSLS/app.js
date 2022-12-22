@@ -17,25 +17,24 @@ possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click
 function generateComputerChoice()
 {
     const randomNumber = Math.floor(Math.random() * possibleChoices.length)
-    console.log(randomNumber)
 
-    if(randomNumber === 0)
+    if(randomNumber == 0)
     {
         computerChoice = 'rock'
     }
-    if(randomNumber === 1)
+    if(randomNumber == 1)
     {
         computerChoice = 'paper'
     }
-    if(randomNumber === 2)
+    if(randomNumber == 2)
     {
         computerChoice = 'scissors'
     }
-    if(randomNumber === 3)
+    if(randomNumber == 3)
     {
         computerChoice = 'lizard'
     }
-    if(randomNumber === 4)
+    if(randomNumber == 4)
     {
         computerChoice = 'spock'
     }

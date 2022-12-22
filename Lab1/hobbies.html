@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="CSS/styles.css">        
+        <script src="app.js"></script>
+
+        <title>Hobbies</title>
+    </head>
+    <body>
+        <nav>
+            <ul id="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="selected" href="hobbies.html">Hobbies</a></li>
+                <li><a href="./RPSLS/index.html">RPSLS</a></li>
+                <li><a href="./Memory/index.html">Memory</a></li>
+                <li><a href="./WackAMole/index.html">Wack-a-Mole</a></li>
+            </ul>
+        </nav>        
+        <main>
+            <h2>List of hobbies</h2>
+            <ol>
+                <li>Boardgames <a href="#" onclick="toggleBoardGames(this)">(Show all games)</a></li>
+                <li>Gaming</li>
+                <li>Cooking</li>
+            </ol>
+            
+            <section id="boardGamesToggle">
+                <ul id="boardGamesList">
+                </ul>
+            </section>
+        </main>
+    </body>
+</html>
