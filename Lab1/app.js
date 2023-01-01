@@ -24,11 +24,11 @@ function toggleBoardGames(link)
     if(boardGamesDiv.style.display == 'block')
     {
         boardGamesDiv.style.display = 'none';
-        link.innerHTML = '(Show all games)'
+        link.innerHTML = '(Show boardgames)'
     }
     else
     {
         boardGamesDiv.style.display = 'block';
-        link.innerHTML = '(Hide all games)'
+        link.innerHTML = '(Hide boardgames)'
     }
 }        

@@ -72,7 +72,7 @@ li
 
 img
 {
-    padding: 50px;
+    padding: 5px;
 }
 
 hr
@@ -125,10 +125,7 @@ p.quote
 {
     display: flex;
     flex-wrap: wrap;
-    height: 305px;
-    width: 410px;
-    justify-content: space-between;
-    align-content: space-between;
+    width: 440px;
     margin: auto;
 }
 
