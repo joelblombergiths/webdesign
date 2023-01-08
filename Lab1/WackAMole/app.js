@@ -5,7 +5,6 @@ const scoreDisplay = document.querySelector('#score')
 
 let result = 0;
 scoreDisplay.textContent = 'Score: ' + result
-
 let currentTime = 60
 timeLeftDisplay.textContent = currentTime
 
@@ -55,15 +54,28 @@ function countDown()
         clearInterval(countDownTimerId)        
         clearInterval(moleTimerId)
         moleSquare = null
-        timeLeftDisplay.textContent = 'Time Out!'
+        timeLeftDisplay.textContent = "Time is up!"
         scoreDisplay.textContent = "Game Over! Final score is " + result
     }
 }
 
 function startGame()
 {    
+    clearInterval(countDownTimerId)        
+    clearInterval(moleTimerId)
+    
+    currentTime = 60
+    timeLeftDisplay.textContent = currentTime
+    result = 0;
+    scoreDisplay.textContent = 'Score: ' + result
+    
+    moleSquare = null
+    grid.forEach(square => 
+    {
+        square.classList.remove('mole')        
+    })
+
     moleTimerId = setInterval(moveMole, 750)
     countDownTimerId = setInterval(countDown, 1000)
 }
 
-startGame()

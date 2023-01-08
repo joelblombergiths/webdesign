@@ -1,62 +1,53 @@
-body
-{
-    background-image: linear-gradient(#CFF5E7, #A0E4CB);    
+body {
+    background-image: linear-gradient(#FFFFFF, #A0E4CB);    
     background-repeat: no-repeat;
     background-attachment: fixed;
     text-align: center;
 }
 
 /* Nån gång kommer detta bli socialt acceptabelt
-body
-{
+body {
     background-color: hotpink;
     color: lime;
     font-family: fantasy;
 } */
 
-h2
-{
+h2 {
     color: #59C1BD;
     font-family: 'Kanit', sans-serif;
 }
 
-main
-{
+main {
     padding-top: 50px;
 }
 
-fieldset
-{
+fieldset {
     color: grey;    
     border: dashed grey 1px;
+    margin-bottom: 40px;
 }
 
-hr
-{
+hr {
     margin: 100px 0px;
 }
 
-table
-{
+table {
     margin: auto;
     border: solid white 2px;
     border-collapse: collapse;
 }
 
-th
-{
+th {
     border: solid white 2px;
     font-family: 'Kanit', sans-serif;
 }
 
-tr, td
-{
+tr, td {
     border: dotted white 1px;
     padding: 5px;
 }
 
-ol
-{
+ol {
     list-style-type: upper-roman;
     display: table;
     margin: auto;
@@ -65,72 +56,61 @@ ol
     font-family: 'Kanit', sans-serif;
 }
 
-li
-{
+li {
     text-align: left;
 }
 
-img
-{
+img {
     padding: 5px;
 }
 
-hr
-{
+hr {
     border-style: dashed;
     border-width: 1px 0px 0px ;
 }
 
-p
-{
+p {
     font-family: monospace;
     color: #0D4C92;
 }
 
-p.quote
-{
+p.quote {
     color: grey;
 }
 
-.header
-{
+.header {
     font-family: 'Dancing Script', cursive;
     font-size: 72px;
     color: #0D4C92;
     margin-top: 50px;
 }
 
-.square
-{
+.square {
     height: 200px;
     width: 200px;
     border: solid black 1px;
 }
 
-.mole
-{
+.mole {
     background-image: url('../WackAMole/images/mole.png');
     background-size: cover;
 }
 
-.bottom
-{
+.bottom {
     position: relative;
-    margin-top: 300px;
+    margin-top: 225px;
     font-family: cursive;
     font-size: x-small;
 }
 
-#memoryGrid 
-{
+#memoryGrid {
     display: flex;
     flex-wrap: wrap;
     width: 440px;
     margin: auto;
 }
 
-#moleGrid
-{    
+#moleGrid {    
     display: flex;
     flex-wrap: wrap;
     width: 606px;
@@ -138,8 +118,7 @@ p.quote
     margin: auto;
 }
 
-#menu
-{
+#menu {
     position: fixed;
     overflow: hidden;
     width: 100%;
@@ -151,31 +130,30 @@ p.quote
     list-style-type: none;
 }
 
-#menu li
-{
+#menu li {
     float: left;
 }
 
-#menu a
-{
+#menu a {
     display: block;
     color: white;
     text-align: center;
     padding: 14px 6px;
     text-decoration: none;
 }
-#menu a:hover
-{
+#menu a:hover {
     background-color: #0d4b9286;
 }
 
-#menu a.selected
-{
+#menu a.selected {
     background-color: #0D4C92;
 }
 
-#boardGamesToggle
-{
+#boardGamesList {
+    columns: 3;
+}
+
+#boardGamesToggle {
     display: none;    
     font-family: monospace;
     border: solid yellow 3px;

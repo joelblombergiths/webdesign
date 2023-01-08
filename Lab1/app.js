@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () =>
         const response = await fetch('https://raw.githubusercontent.com/joelblombergiths/boardgames/main/README.md');
         const data = await response.text();                                
         
-        var boardGames = data.split(/\n/)
+        let boardGames = data.split(/\n/)
         boardGames.splice(0, 2);
         boardGames.splice(boardGames.length -1, 1);
 

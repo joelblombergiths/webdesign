@@ -3,15 +3,16 @@ const playerChoiceDisplay = document.getElementById('playerChoice')
 const resultDisplay = document.getElementById('result')
 const possibleChoices = document.querySelectorAll('button')
 
-let userChoice
-let computerChoice
-let result
+var userChoice
+var computerChoice
+var result
 
 possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => 
 {
     userChoice = e.target.id
     playerChoiceDisplay.innerText = userChoice
     generateComputerChoice()    
+    GetResult()
 }))
 
 function generateComputerChoice()
@@ -39,9 +40,7 @@ function generateComputerChoice()
         computerChoice = 'spock'
     }
 
-    computerChoiceDisplay.innerText = computerChoice
-
-    GetResult()
+    computerChoiceDisplay.innerText = computerChoice    
 }
 
 function GetResult()

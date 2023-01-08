@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="../CSS/styles.css"/>
-    <title>RPSLS</title>
-</head>
-<body>
-    <nav>
-        <ul id="menu">
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../hobbies.html">Hobbies</a></li>
-            <li><a class="selected" href="../RPSLS/index.html">RPSLS</a></li>
-            <li><a href="../Memory/index.html">Memory</a></li>
-            <li><a href="../WackAMole/index.html">Wack-a-Mole</a></li>
-        </ul>
-    </nav>
-    <div class="main">        
-        <h2>Computer choice: <span id="computerChoice"></span></h2>
-        <h2>Player choice: <span id="playerChoice"></span></h2>
-        <h2>Result: <span id="result"></span></h2>
-        <br>
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
-        <button id="lizard">lizard</button>
-        <button id="spock">spock</button>
-    </div>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Kanit:wght@200&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../CSS/styles.css"/>
+        <title>RPSLS</title>
+    </head>
+    <body>
+        <nav>
+            <ul id="menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../hobbies.html">Hobbies</a></li>
+                <li><a class="selected" href="../RPSLS/index.html">RPSLS</a></li>
+                <li><a href="../Memory/index.html">Memory</a></li>
+                <li><a href="../WackAMole/index.html">Wack-a-Mole</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h1 class="header">Rock, Paper, Scissors, Lizard, Spock</h1>
+            <h2>Player choice: <span id="playerChoice"></span></h2>
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissors">Scissors</button>
+            <button id="lizard">lizard</button>
+            <button id="spock">spock</button>
+            <br>
+            <br>
+            <h2>Computer choice: <span id="computerChoice"></span></h2>
+            <br>
+            <h2>Result: <span id="result"></span></h2>
+        </main>
 
-    <script src="app.js" charset="utf-8"></script>
-</body>
+        <script src="app.js" charset="utf-8"></script>
+    </body>
 </html>

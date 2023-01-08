@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Kanit:wght@200&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="CSS/styles.css">        
         <script src="app.js"></script>
-
         <title>Hobbies</title>
     </head>
     <body>
@@ -17,17 +17,17 @@
             </ul>
         </nav>        
         <main>
-            <h2>List of hobbies</h2>
+            <h1 class="header">List of hobbies</h1>
             <ol>
-                <li>Boardgames <a href="#" onclick="toggleBoardGames(this)">(Show all games)</a></li>
+                <li>Boardgames <a href="#" onclick="toggleBoardGames(this)">(Show boardgames)</a></li>
                 <li>Gaming</li>
                 <li>Cooking</li>
             </ol>
             
-            <section id="boardGamesToggle">
-                <ul id="boardGamesList">
-                </ul>
-            </section>
+            <article id="boardGamesToggle">
+                <h3>Current list fetched from GitHub</h3>
+                <ul id="boardGamesList"></ul>
+            </article>
         </main>
     </body>
 </html>

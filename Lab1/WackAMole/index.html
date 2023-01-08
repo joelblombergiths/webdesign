@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Whack-A-Mole</title>
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Kanit:wght@200&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../CSS/styles.css"/>
+        <title>Whack-A-Mole</title>
     </head>
     <body>
         <nav>
@@ -15,6 +16,8 @@
             </ul>
         </nav>
         <main>
+            <h1 class="header">Whack-A-Mole</h1>
+            <input type="button" value="New Game" onclick="startGame()">
             <h2><span id="score"></span></h2>
             <h2>Time left: <span id="timeLeft"></span></h2>
 
@@ -29,6 +32,8 @@
                 <div class="square" id="7"></div>
                 <div class="square" id="8"></div>
             </div>
+            <br>
+            
         </main>
         <script src="app.js"></script>
     </body>
