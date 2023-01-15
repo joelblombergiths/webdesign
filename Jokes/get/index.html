@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../styles.css">
+    <title>Jokes</title>
+</head>
+<body>
+    <nav>
+        <ul id="menu">
+            <li><a class="selected" href="index.html">Get Joke</a></li>
+            <li><a href="../add/">Add Joke</a></li>
+        </ul>
+    </nav>
+    <main>
+        <table>
+            <tr>
+                <td>
+                    <label for="category">Category:</label>
+                </td>
+                <td>
+                    <select name="category" id="category">
+                        <option>Any</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="type">Type:</label>
+                </td>
+                <td>
+                    <select name="type" id="type">
+                        <option>Any</option>
+                        <option>Single</option>
+                        <option>TwoPart</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button id="jokeButton">Tell me a Joke!</button>
+                </td>
+            </tr>
+        </table>
+        <div id="jokeContainer"></div>
+
+        <script src="app.js"></script>
+    </main>
+</body>
+</html>

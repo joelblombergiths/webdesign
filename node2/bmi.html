@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="Height" placeholder="Your Height (in cm)">
+        <input type="text" id="Weight" placeholder="Your Weight (in kg)">
+        <button type="button" onclick="getBmi()">Calulate BMI</button>
+    </form>
+    <h1><span id="bmi"></span></h1>
+
+    <script>
+        const result = document.getElementById('bmi')
+        async function getBmi()
+        {
+            let height = document.getElementById("Height").value
+            let weight = document.getElementById("Weight").value
+            const data = {height, weight}
+            const request = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            }
+            const response = await fetch('/bmi', request)
+            const json = await response.json()
+            console.log(json)
+        }
+    </script>
+</body>
+</html>

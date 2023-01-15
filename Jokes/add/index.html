@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../styles.css">
+    <title>Add Joke</title>
+</head>
+<body>
+    <nav>
+        <ul id="menu">
+            <li><a href="../get/">Get Joke</a></li>
+            <li><a class="selected" href="index.html">Add Joke</a></li>
+        </ul>
+    </nav>
+    <main>
+        <table>
+            <tr>
+                <td>
+                    <label for="type">Type:</label>
+                </td>
+                <td>
+                    <select name="type" id="type">
+                        <option>Single</option>
+                        <option>TwoPart</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="category">Category:</label>
+                </td>
+                <td>
+                    <input type="text" name="category" id="category">
+                </td>
+            </tr>
+            <tr class="single">
+                <td>
+                    <label for="jokeText">Joke: </label>
+                </td>
+                <td>
+                    <input type="text" name="jokeText" id="jokeText">
+                </td>
+            </tr>
+            <tr class="twoPart" style="display: none;">
+                <td>
+                    <label for="setup">Setup:</label>
+                </td>
+                <td>
+                    <input type="text" name="setup" id="setup">
+                </td>
+            </tr>
+            <tr class="twoPart"  style="display: none;">
+                <td>
+                    <label for="delivery">Delivery:</label>
+                </td>
+                <td>
+                    <input type="text" name="delivery" id="delivery">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button id="jokeButton">Upload New Joke!</button>
+                </td>
+            </tr>
+        </table>
+        <h1 id="status"></h1>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

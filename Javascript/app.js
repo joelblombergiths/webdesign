@@ -163,11 +163,11 @@
 
 
 
-let age = prompt("age?")
-let now = new Date()
-let birthYear = new Date(now.setFullYear(now.getFullYear() - age))
-let deathYear = new Date(birthYear.setFullYear(birthYear.getFullYear() + 90))
-console.log(deathYear)
+// let age = prompt("age?")
+// let now = new Date()
+// let birthYear = new Date(now.setFullYear(now.getFullYear() - age))
+// let deathYear = new Date(birthYear.setFullYear(birthYear.getFullYear() + 90))
+// console.log(deathYear)
 
 
 
@@ -187,3 +187,120 @@ console.log(deathYear)
 // }
 
 // lifeInWeeks(userAge)
+
+//1. RNG
+
+// let n = Math.ceil( Math.random() * 6)
+// console.log(n)
+
+//2. Love Calc
+// prompt('Name?')
+// prompt('their name?')
+
+// let score = Math.ceil(Math.random() * 100)
+// alert(`Score is ${score}%!`)
+
+//3. Conditions
+// let track = "clear"
+
+// if(track === "clear")
+// {
+//     goStraight()
+// }
+// else
+// {
+//     turnRight()
+// }
+
+//4 love
+// prompt('Name?')
+// prompt('their name?')
+
+// let score = Math.ceil(Math.random() * 100)
+
+// if (score > 70) {
+//     alert(`Score is ${score}%! That's Fire`)
+// }
+// else {
+//     alert(`Score is ${score}% :( Though luck...`)
+// }
+
+//5. 
+
+// prompt('Name?')
+// prompt('their name?')
+
+// let score = Math.ceil(Math.random() * 100)
+
+// if (score > 70)
+// {
+//     alert('Fire');
+// }
+
+// if (score > 30 && score <= 70)
+// {
+//     alert(`Score is ${score}%`)
+// }
+
+// if (score <= 30) {
+//     alert('change asap')
+// }
+
+
+//6. == || ===
+
+// let a = 1
+// let b = "1"
+
+// b == a
+// true
+
+// b === a
+// false
+
+//7. Aarrays
+// let a = ['test', 11, "11", {name: 'J'}]
+// console.log(a[3].name)
+
+// let guests = ['bob', 'frank', 'maria', 'patrick', 'fredric']
+
+// let guestName = prompt('guestName?')
+
+// if(guests.includes(guestName))
+// {
+//     alert(`Welcome ${guestName}`)
+// }
+// else
+// {
+//     alert('You are not on the list')
+// }
+
+//8 Arrays
+
+// let output = []
+// let count = 1
+
+// function addOne()
+// {
+//     output.push(count)
+//     console.log(output)
+//     count++;
+// }
+
+// addOne()
+// addOne()
+// addOne()
+// addOne()
+// addOne()
+
+
+//9
+// let friends = ['bob', 'frank', 'maria', 'patrick', 'fredric']
+
+// function whosPaying()
+// {
+//     let r = Math.floor(Math.random() * friends.length)
+//     console.log(` ${friends[r]} is paying today `)
+// }
+
+// whosPaying()
